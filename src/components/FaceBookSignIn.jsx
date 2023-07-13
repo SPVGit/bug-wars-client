@@ -20,29 +20,33 @@ function FacebookSignIn(){
 
   const responseFacebook = (response) => {
 
+    console.log(response)
+
     if(response.accessToken){
 
-        const fbUser = response
-    
-    console.log(response);
-
+    const fbUser = response
     const requestBody = { email: FB_EMAIL, password: FB_PW, username: fbUser.name, picture:fbUser.picture.data.url, route:'Facebook' }
 
     axios
         .post(`${API_URL}/altsignup`, requestBody)
         .then((response) => {
-            console.log(response.data)
+
             storedToken(response.data.authToken)
             authenticateUser()
             navigate('/home')
+
         })
         .catch((error) => {
+
             console.log(error)
             return;
+
         })
 
     }
+  
   }
+
 
   return (
     <div className='d-flex justify-content-center rounded border p-2 col-md-12 mt-2'>
@@ -51,7 +55,7 @@ function FacebookSignIn(){
           
             <FacebookLogin
               appId={APP_ID}
-              autoLoad={true}
+              autoLoad={false}
               fields="name,email,picture"
               scope="public_profile,user_friends"
               callback={responseFacebook}

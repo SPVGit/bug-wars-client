@@ -11,3 +11,6 @@ body{
   min-height: 100vh;
   overflow: scroll;
 }
+.user-card{
+  background-image: linear-gradient(to top, #073233, #142544);
+}

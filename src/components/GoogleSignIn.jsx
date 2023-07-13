@@ -48,12 +48,12 @@ function GoogleSignIn() {
             callback: handleGoogleCallbackResponse
         })
         google.accounts.id.renderButton(document.getElementById('signInDiv'),
-            { size:'large' })
+            { size:'large', width:'100%' })
 
     }, [])
 
     return (
-        <div  variant="outline" id='signInDiv' className='d-flex justify-content-center rounded border p-3 col-md-12' > 
+        <div  id='signInDiv' className='d-flex justify-content-center align-items-center rounded border p-2 col-md-12' > 
 
         </div>
     )

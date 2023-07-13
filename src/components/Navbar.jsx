@@ -20,7 +20,7 @@ const NavbarComponent = () => {
       <Container className="d-flex justify-content-center">
 
         {(!isLoggedIn && !isGoogleLoggedIn) && (
-          <Nav className="me-auto col-md-4 col-sm-4 col align-items-center  justify-content-center  border p-2">
+          <Nav className="me-auto col-md-4 col-sm-4 col align-items-center  justify-content-center  border p-2 rounded">
 
 
             <NavLink
@@ -37,7 +37,7 @@ const NavbarComponent = () => {
         )}
 
         {isLoggedIn &&
-          <Nav className="me-auto col-md-4  col-sm-4 col align-items-center  justify-content-center border p-2">
+          <Nav className="me-auto col-md-4  col-sm-4 col align-items-center  justify-content-center border rounded p-2">
             <NavLink
               className="navlink"
               style={{ textDecoration: "none", color: "white" }}
@@ -52,7 +52,7 @@ const NavbarComponent = () => {
           </Nav>
         }
         {(!isLoggedIn) && (
-          <Nav className="me-auto col-md-4  col-sm-4 col align-items-center  justify-content-center border p-2">
+          <Nav className="me-auto col-md-4  col-sm-4 col align-items-center  justify-content-center border  rounded p-2">
 
 
             <NavLink
@@ -69,7 +69,7 @@ const NavbarComponent = () => {
           </Nav>
         )}
         {(!isLoggedIn) && (
-          <Nav className="me-auto col-md-4  col-sm-4 col align-items-center  justify-content-center border p-2">
+          <Nav className="me-auto col-md-4  col-sm-4 col align-items-center  justify-content-center rounded border p-2">
 
             <NavLink
               className="navlink"
@@ -86,7 +86,7 @@ const NavbarComponent = () => {
         )}
 
         {isLoggedIn && (
-          <Nav className="me-auto col-md-4  col-sm-4 col align-items-center  justify-content-center border p-2">
+          <Nav className="me-auto col-md-4  col-sm-4 col align-items-center  justify-content-center rounded border p-2">
 
             <NavLink
               className="navlink"
@@ -104,7 +104,7 @@ const NavbarComponent = () => {
 
 
         {isLoggedIn && (
-          <Nav className="me-auto col-md-4  col-sm-4 col align-items-center justify-content-center border p-2">
+          <Nav className="me-auto col-md-4  col-sm-4 col align-items-center justify-content-center rounded border p-2">
 
             <NavLink
               className="navlink"

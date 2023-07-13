@@ -73,7 +73,7 @@ function SignupPage() {
     <Container className="d-flex justify-content-center">
       <div className="SignupPage fade-in text-center mw-75  ">
         <h1>
-          Sign up to play<br />  Bug Wars!
+          Sign up to play Bug Wars!
         </h1>
 
         <Form

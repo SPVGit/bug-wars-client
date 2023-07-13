@@ -62,14 +62,14 @@ function HomePage() {
 
         {(user.route === 'Google' || user.route === 'Facebook') &&
           <div className="d-flex flex-column justify-content-center align-items-center">
-            <img src={user.picture} style={{ width: 100, height: 100 }} />
+            <img src={user.picture} style={{ width: 100, height: 100 }} className="border rounded"/>
             <h3>Welcome {user.username}, to the Bug Wars! </h3>
             <h3>Select a player to start...</h3>
           </div>}
 
         {user.route === 'Regular' &&
           <div className="d-flex flex-column justify-content-center align-items-center">
-            <img src='../../BUG-AVATAR.png' style={{ width: 100, height: 100 }} />
+            <img src='../../BUG-AVATAR.png' style={{ width: 100, height: 100 }} className="border rounded"/>
             <h3>Welcome {user.username}, to the Bug Wars! </h3>
             <h3>Select a player to start...</h3>
           </div>}
@@ -88,21 +88,19 @@ function HomePage() {
               key={gameUser._id}
               className="d-flex justify-content-center text-center">
 
-              <Card style={{ margin: "10px", padding: 10, width: "40vw" }}>
+              <Card className='user-card text-white'
+                style={{ margin: "10px", padding: 10, width: "40vw" }}
+                onClick={() => {
+                  handleGameClick(gameUser._id)
+                }}
+              >
+                <img src={gameUser.picture} className="" />
 
-                <Card.Header>
+                <Card.Header className='d-flex flex-row'>
                   <Card.Title>
                     <h5>{gameUser.username.charAt(0).toUpperCase() + gameUser.username.slice(1)}</h5>
                   </Card.Title>
                 </Card.Header>
-
-                <Button
-                  variant="dark"
-                  onClick={() => {
-                    handleGameClick(gameUser._id)
-                  }}>
-                  Start Game
-                </Button>
 
               </Card>
 
