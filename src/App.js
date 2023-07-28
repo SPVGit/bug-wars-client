@@ -10,6 +10,9 @@ import IsPrivate from "./components/IsPrivate"
 import BugWarsPage from './pages/BugWarsPage';
 import HomePage from './pages/HomePage';
 import Home from './pages/Home';
+import AccountsPage from "./pages/AccountsPage"
+import PWResetPage from "./pages/PWResetPage"
+import PWResetEmail from "./pages/PWResetEmail"
 
 //--------------------------------------------------------------------------------------------------------------------------
 
@@ -28,13 +31,7 @@ function App() {
             <Home />}
         />
 
-        <Route
-          path="/home"
-          element={ //Before Login
-            <IsPrivate>
-              <HomePage />
-            </IsPrivate>}
-        />
+
 
         <Route
           path="/signup"
@@ -53,12 +50,46 @@ function App() {
             </IsAnon>
           }
         />
+        <Route
+          path="/passwordresetpage/:userId/:userToken"
+          element={
+            <IsAnon>
+              <PWResetPage />
+            </IsAnon>
 
+          }
+        />
+
+        <Route
+          path="/passwordresetemail"
+          element={
+            <IsAnon>
+              <PWResetEmail />
+            </IsAnon>
+
+          }
+        />
+
+        <Route
+          path="/home"
+          element={ //Before Login
+            <IsPrivate>
+              <HomePage />
+            </IsPrivate>}
+        />
         <Route
           path="/bugwars"
           element={
             <IsPrivate>
               <BugWarsPage />
+            </IsPrivate>}
+        />
+
+        <Route
+          path="/accounts/:userId"
+          element={
+            <IsPrivate>
+              <AccountsPage />
             </IsPrivate>}
         />
 
@@ -69,6 +100,7 @@ function App() {
               <BugWarsPage />
             </IsPrivate>}
         />
+
 
       </Routes>
 

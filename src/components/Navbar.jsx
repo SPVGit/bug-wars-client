@@ -9,7 +9,7 @@ import Navbar from "react-bootstrap/Navbar"
 //--------------------------------------------------------------------------------------------------------------------------
 
 const NavbarComponent = () => {
-  const { isLoggedIn, logOutUser, isGoogleLoggedIn } = useContext(AuthContext)
+  const { isLoggedIn, logOutUser, user } = useContext(AuthContext)
 
 
   return (
@@ -19,7 +19,7 @@ const NavbarComponent = () => {
       expand="lg">
       <Container className="d-flex justify-content-center">
 
-        {(!isLoggedIn && !isGoogleLoggedIn) && (
+        {!isLoggedIn  && (
           <Nav className="me-auto col-md-4 col-sm-4 col align-items-center  justify-content-center  border p-2 rounded">
 
 
@@ -51,7 +51,7 @@ const NavbarComponent = () => {
             </NavLink>
           </Nav>
         }
-        {(!isLoggedIn) && (
+        {!isLoggedIn && (
           <Nav className="me-auto col-md-4  col-sm-4 col align-items-center  justify-content-center border  rounded p-2">
 
 
@@ -68,7 +68,7 @@ const NavbarComponent = () => {
 
           </Nav>
         )}
-        {(!isLoggedIn) && (
+        {!isLoggedIn && (
           <Nav className="me-auto col-md-4  col-sm-4 col align-items-center  justify-content-center rounded border p-2">
 
             <NavLink
@@ -92,8 +92,8 @@ const NavbarComponent = () => {
               className="navlink"
               style={{ textDecoration: "none", color: "white" }}
               as={NavLink}
-              to="/accounts"
-              onClick={logOutUser}>
+              to={`/accounts/${user._id}`}
+              >
               <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className="bi bi-pen-fill" viewBox="0 0 16 16">
                 <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z" />
               </svg>

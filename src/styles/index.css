@@ -14,3 +14,133 @@ body{
 .user-card{
   background-image: linear-gradient(to top, #073233, #142544);
 }
+.chatContainer {
+  width: 80vw;
+  height: 80vh;
+  border: 5px solid #0091ff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  margin-bottom: 30px;
+}
+
+.chatContainer .messages {
+  flex: 80%;
+  width: 100%;
+  padding-left: 10px;
+  overflow: auto;
+}
+
+.chatContainer .messageInputs {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.chatContainer .messageInputs input {
+  width: 90%;
+  height: 100%;
+  border: none;
+  border: 5px solid #ffffff;
+  padding-left: 20px;
+  font-size: 16px;
+  padding-bottom: 40px;
+}
+
+.chatContainer .messageInputs button {
+  flex: 20%;
+  height: 33.3%;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+}
+
+.messageContainer {
+  display: flex;
+  
+}
+
+.messageContainer h1 {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 17px;
+}
+
+#You {
+  justify-content: flex-end;
+}
+
+#Other {
+  justify-content: flex-start;
+}
+
+#Other .messageIndividual {
+  color: black;
+}
+
+.messageIndividual {
+  width: 50vw;
+  height: 60px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  opacity: 0.9;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-right: 10px;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.309)
+}
+
+.glass {
+  background: rgba(98, 98, 98, 0.752);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+#signInDiv div{
+  width:100%;
+}
+
+#signInDiv g{
+  display: none;
+}
+#signInDiv svg{
+  display: none;
+}
+
+#signInDiv span{
+  font-weight: bold;
+}
+
+.nsm7Bb-HzV7m-LgbsSe-Bz112c{
+  display:none;
+}
+
+.bugs{
+  font-size: 50px;
+  cursor: pointer;
+  
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

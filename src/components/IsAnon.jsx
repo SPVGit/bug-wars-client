@@ -6,7 +6,7 @@ import { Navigate} from "react-router-dom"
 
 function IsAnon({ children }) {
   
-  const { isLoading, isLoggedIn, isGoogleLoggedIn } = useContext(AuthContext)
+  const { isLoading, isLoggedIn } = useContext(AuthContext)
 
   // If the authentication is still loading, show the spinner
 
@@ -34,9 +34,6 @@ function IsAnon({ children }) {
 
   if (isLoggedIn) {
     return <Navigate to="/home" />
-  }
-  else if (isGoogleLoggedIn){
-    return <Navigate to="/home1" />
   }
   else {
     return children

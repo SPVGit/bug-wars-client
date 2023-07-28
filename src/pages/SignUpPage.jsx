@@ -46,7 +46,7 @@ function SignupPage() {
 
     e.preventDefault()
 
-    const requestBody = { email, password, username, confirmPassword }
+    const requestBody = { email, password, username, confirmPassword, picture:'../../BUG-AVATAR.png' }
 
     axios
       .post(`${API_URL}/signup`, requestBody) //sign up of users
@@ -71,7 +71,7 @@ function SignupPage() {
   return (
 
     <Container className="d-flex justify-content-center">
-      <div className="SignupPage fade-in text-center mw-75  ">
+      <div className="SignupPage text-center mw-75 text-white ">
         <h1>
           Sign up to play Bug Wars!
         </h1>
