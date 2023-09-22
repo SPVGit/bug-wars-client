@@ -8,7 +8,6 @@ function GameRules() {
             <div className="dropdown-content rounded col-12 col-sm-12 col-md-12 bg-dark">
                 <div className="d-flex flex-column justify-content-start bg-dark text-white" style={{ fontSize: '0.7rem',lineHeight:"100%"}}>
                     <p>To start game click 'Pick'.</p>
-                    <p>Select cards only from the left.</p>
                     <p>Picked cards cannot be undone.</p>
                     <p>1 Spider can eat 1 Bug.</p>
                     <p>1 Bug can eat 1 Leaf branch.</p>

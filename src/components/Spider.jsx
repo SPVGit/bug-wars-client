@@ -1,10 +1,13 @@
+import { useEffect } from "react"
 
 
-function Spider(){
+function Spider(props){
+
+
 
     return(
         
-            <h1 id='Spider' className="bugs">🕷</h1>
+            <h1  id={`Spider${props.index}`} className="bugs" >🕷</h1>
         
     )
 }

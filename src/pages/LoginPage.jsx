@@ -5,6 +5,7 @@ import { useNavigate, Link } from "react-router-dom"
 import axios from "axios"
 
 import Button from "react-bootstrap/Button"
+import Card from "react-bootstrap/esm/Card"
 import Form from "react-bootstrap/Form"
 import InputGroup from "react-bootstrap/InputGroup"
 import Container from "react-bootstrap/Container"
@@ -51,10 +52,11 @@ const LoginPage = () => {
 
       })
       .catch((error) => {
-
-        const errorDescription = error.response.data.message
+        if(error){
+          const errorDescription = error.response.data.message
         setErrorMessage(errorDescription)
-
+        }
+        
       })
 
   }
@@ -63,7 +65,10 @@ const LoginPage = () => {
 
     <Container className="LoginPage text-center justify-content-center d-flex text-white">
       <div className="mw-75 text-center">
+
         <h1 >Login to Play Bug Wars!</h1>
+
+        <Card className='bg-transparent border border-white border-5 rounded p-1'>
 
         <Form
           style={{ padding: "40px", justifyContent: "center", display: "flex", flexDirection: "column" }}
@@ -74,7 +79,7 @@ const LoginPage = () => {
             className="mb-3"
             width="80vw">
             <Form.Group>
-              <Form.Label className="label ">Email</Form.Label>
+              
               <Form.Control
                 required
                 placeholder="Your Email"
@@ -82,11 +87,12 @@ const LoginPage = () => {
                 name="email"
                 value={email}
                 onChange={handleEmail}
+                className='mb-3'
               />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>
             <Form.Group>
-              <Form.Label className="label ">Password</Form.Label>
+              
               <InputGroup hasValidation>
                 <Form.Control
                   placeholder="Password"
@@ -103,7 +109,7 @@ const LoginPage = () => {
             <Link className='mt-3 text-white' to={'/passwordresetemail'}>Forgot your password?</Link>
           </Row>
           <Button
-            style={{ width: "100%", margin: "16px 0px" }}
+            style={{ width: "100%", margin: "10px 0px" }}
             variant="dark"
             type="submit">
             Log in
@@ -111,7 +117,7 @@ const LoginPage = () => {
 
           {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-          <p>Don't have an account yet?</p>
+          <p className="text-white">Don't have an account yet?</p>
 
           <Button
             className="mb-2"
@@ -126,6 +132,7 @@ const LoginPage = () => {
           <FacebookSignIn/>
 
         </Form>
+        </Card>
       </div>
     </Container>
 

@@ -89,8 +89,8 @@ function AccountsPage() {
 
 
     return (
-        <Container className="LoginPage text-center justify-content-center d-flex text-white" style={{ padding: '40px' }}>
-            <div className="mw-75 text-center">
+        <Container className="LoginPage text-center text-white "  style={{ padding: '20px'}} >
+            <div className="mw-75 text-center col-12 col-sm-12 col-md-12 justify-content-center d-flex flex-column align-items-center">
                 <h1 className="mb-3">Edit your Profile Picture</h1>
 
                 <ImageUpload />
@@ -100,7 +100,7 @@ function AccountsPage() {
                     style={{ padding: "40px", justifyContent: "center", display: "flex", flexDirection: "column" }}
                     noValidate
                     validated={validated}
-                    className="border rounded"
+                    className="border border-5 rounded col col-sm-10 col-md-10"
                     onSubmit={handleSubmit}
                 >
                     <Row
@@ -108,7 +108,8 @@ function AccountsPage() {
                         width="80vw">
 
 
-                        <Form.Group>
+                        <Form.Group >
+                    
                             <Form.Label className="label mt-2">Username</Form.Label>
                             <Form.Control
                                 required

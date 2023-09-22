@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom"
 import axios from "axios"
 
 import Button from "react-bootstrap/Button"
+import Card from "react-bootstrap/Card"
 import Col from "react-bootstrap/Col"
 import Form from "react-bootstrap/Form"
 import InputGroup from "react-bootstrap/InputGroup"
@@ -71,10 +72,14 @@ function SignupPage() {
   return (
 
     <Container className="d-flex justify-content-center">
+
       <div className="SignupPage text-center mw-75 text-white ">
+
         <h1>
           Sign up to play Bug Wars!
         </h1>
+
+        <Card className='bg-transparent border border-white border-5 rounded p-3 pt-4'>
 
         <Form
           style={{ padding: "0px 40px", justifyContent: "center", display: "flex", flexDirection: "column" }}
@@ -90,7 +95,7 @@ function SignupPage() {
               md="6"
               controlId="validationCustom01">
               <Form.Control
-                className="mt-2"
+                className="mt-2 mb-2"
                 required
                 placeholder="Your name"
                 type="text"
@@ -106,13 +111,14 @@ function SignupPage() {
               md="6"
               controlId="validationCustom02">
               <Form.Control
-                className="mt-2"
+                className="mt-2 mb-2"
                 required
                 placeholder="Your Email"
                 type="email"
                 name="email"
                 value={email}
                 onChange={handleEmail}
+               
               />
 
             </Form.Group>
@@ -123,7 +129,7 @@ function SignupPage() {
               controlId="validationCustom03">
               <InputGroup hasValidation>
                 <Form.Control
-                  className="mt-2"
+                  className="mt-2 mb-2"
                   placeholder="Password"
                   aria-describedby="inputGroupPrepend"
                   required
@@ -166,7 +172,7 @@ function SignupPage() {
         </Form>
 
         <Container style={{ padding: "0px 40px 40px", justifyContent: "center", display: "flex", flexDirection: "column", textAlign: "center", gap: "8px" }}>
-          <p className="mt-3">Already have account?</p>
+          <p className="mt-3 text-white">Already have account?</p>
 
           <Button
             variant="dark"
@@ -187,11 +193,12 @@ function SignupPage() {
             <FacebookSignIn/> 
             
           </div>
-
+          
 
 
 
         </Container>
+        </Card>
 
       </div>
 

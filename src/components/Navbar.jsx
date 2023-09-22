@@ -1,6 +1,6 @@
 
 import { useContext } from "react"
-import { NavLink } from "react-router-dom"
+import { NavLink, useLocation } from "react-router-dom"
 import { AuthContext } from "../context/auth.context"
 import Container from "react-bootstrap/Container"
 import Nav from "react-bootstrap/Nav"
@@ -10,8 +10,8 @@ import Navbar from "react-bootstrap/Navbar"
 
 const NavbarComponent = () => {
   const { isLoggedIn, logOutUser, user } = useContext(AuthContext)
-
-
+  const location=useLocation()
+  
   return (
     <Navbar
       style={{ marginBottom: "20px", marginTop: "20px" }}
@@ -20,12 +20,13 @@ const NavbarComponent = () => {
       <Container className="d-flex justify-content-center">
 
         {!isLoggedIn  && (
-          <Nav className="me-auto col-md-4 col-sm-4 col align-items-center  justify-content-center  border p-2 rounded">
+          <Nav className="me-auto col-md-4 col-sm-4 col align-items-center  justify-content-center  border border-5 p-2 rounded"
+          style={{backgroundColor:location.pathname==='/' ? '#7a7777' : ''}}>
 
 
             <NavLink
               className="navlink"
-              style={{ textDecoration: "none", color: "white" }}
+              style={{ textDecoration: "none", color: "white"}}
               as={NavLink}
               to="/">
               <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className="bi bi-bug" viewBox="0 0 16 16">
@@ -37,7 +38,8 @@ const NavbarComponent = () => {
         )}
 
         {isLoggedIn &&
-          <Nav className="me-auto col-md-4  col-sm-4 col align-items-center  justify-content-center border rounded p-2">
+          <Nav className="me-auto col-md-4  col-sm-4 col align-items-center  justify-content-center border  border-5 rounded p-2"
+          style={{backgroundColor:location.pathname==='/home' ? '#7a7777' : ''}}>
             <NavLink
               className="navlink"
               style={{ textDecoration: "none", color: "white" }}
@@ -52,7 +54,8 @@ const NavbarComponent = () => {
           </Nav>
         }
         {!isLoggedIn && (
-          <Nav className="me-auto col-md-4  col-sm-4 col align-items-center  justify-content-center border  rounded p-2">
+          <Nav className="me-auto col-md-4  col-sm-4 col align-items-center  justify-content-center border  border-5 rounded p-2"
+          style={{backgroundColor:location.pathname==='/signup' ? '#7a7777' : ''}}>
 
 
             <NavLink
@@ -69,7 +72,8 @@ const NavbarComponent = () => {
           </Nav>
         )}
         {!isLoggedIn && (
-          <Nav className="me-auto col-md-4  col-sm-4 col align-items-center  justify-content-center rounded border p-2">
+          <Nav className="me-auto col-md-4  col-sm-4 col align-items-center  justify-content-center rounded border  border-5 p-2"
+          style={{backgroundColor:location.pathname==='/login' ? '#7a7777' : ''}}>
 
             <NavLink
               className="navlink"
@@ -86,7 +90,8 @@ const NavbarComponent = () => {
         )}
 
         {isLoggedIn && (
-          <Nav className="me-auto col-md-4  col-sm-4 col align-items-center  justify-content-center rounded border p-2">
+          <Nav className="me-auto col-md-4  col-sm-4 col align-items-center  justify-content-center rounded border  border-5 p-2"
+          style={{backgroundColor:location.pathname===`/accounts/${user._id}` ? '#7a7777' : ''}}>
 
             <NavLink
               className="navlink"
@@ -104,7 +109,8 @@ const NavbarComponent = () => {
 
 
         {isLoggedIn && (
-          <Nav className="me-auto col-md-4  col-sm-4 col align-items-center justify-content-center rounded border p-2">
+          <Nav className="me-auto col-md-4  col-sm-4 col align-items-center justify-content-center rounded border  border-5 p-2"
+          style={{backgroundColor:location.pathname==="/" ? '#7a7777' : ''}}>
 
             <NavLink
               className="navlink"

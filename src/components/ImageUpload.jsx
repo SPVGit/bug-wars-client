@@ -3,7 +3,7 @@ import { useState, useContext, useEffect } from "react"
 import { AuthContext } from "../context/auth.context"
 import axios from 'axios';
 import { Container } from "react-bootstrap";
-import {Button} from "react-bootstrap"
+import { Button } from "react-bootstrap"
 //import loadingGif from './spinner.gif';
 
 const API_URL = process.env.REACT_APP_API_URL
@@ -34,10 +34,10 @@ function ImageUpload() {
             const res = await axios.post(`${CLOUDINARY_URL}/image/upload`, formData);
             const imageUrl = res.data.secure_url;
             const image = await axios.put(`${API_URL}/upload/${user._id}`, {
-                picture:imageUrl
+                picture: imageUrl
             }, {
                 headers: { Authorization: `Bearer ${storedToken}` }
-              });
+            });
             setLoading(false);
             setImage(image.data);
         } catch (err) {
@@ -47,34 +47,37 @@ function ImageUpload() {
 
     useEffect(() => {
         async function fetchImage() {
-            const image = await axios.get(`${API_URL}/getLatest/${user._id}`,{
+            const image = await axios.get(`${API_URL}/getLatest/${user._id}`, {
                 headers: { Authorization: `Bearer ${storedToken}` }
-              } );
+            });
             setImage(image.data);
         }
         fetchImage();
         // eslint-disable-next-line
     }, []);
     return (
-        <Container className="d-flex flex-row justify-content-between p-5 border rounded">
-            <img src={image} style={{ width: 100, height: 100 }} className="border rounded bg-light mt-2 col-4 col-sm-4 col-md-4" />
-         
-                
-                <div className='d-flex flex-column justify-content-center col-8 col-sm-8 col-md-8'>
-                   
-                        
-                        <input className="border rounded bg-white text-dark mb-2" type='file' name='image' onChange={onChange} />
-                    
-               {loading ? <Button onClick={onSubmit} className='rounded text-white p-2' variant="dark">
-                        Uploading Image...
-                    </Button> :  <Button onClick={onSubmit} className='rounded text-white p-2' variant="dark">
-                        Submit
-                    </Button>}
-               
+        <Container className="d-flex flex-row justify-content-center p-2 border border-5 rounded col col-sm-10 col-md-10">
 
-                   
-                </div>
-          
+            <img src={image} style={{ width: 100, height: 100 }} className="border rounded bg-light m-2 col-3 col-sm-3 col-md-3" />
+
+
+            <div className='d-flex flex-column justify-content-center col-6 col-sm-6 col-md-6'>
+
+                <input className="border rounded bg-white text-dark mb-2" type='file' name='image' onChange={onChange}
+
+                />
+
+
+                {loading ? <Button onClick={onSubmit} className='rounded text-white p-2' variant="dark">
+                    Uploading Image...
+                </Button> : <Button onClick={onSubmit} className='rounded text-white p-2' variant="dark">
+                    Submit
+                </Button>}
+
+
+
+            </div>
+
         </Container>
     )
 

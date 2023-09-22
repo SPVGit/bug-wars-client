@@ -1,7 +1,6 @@
-
-body{
+body {
   margin: 0;
-  padding:0;
+  padding: 0;
   background: radial-gradient(circle at 50% 50%, #ff0000, #000);
   background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(255, 0, 0, 1) 40%, #000000 100%);
   display: flex;
@@ -11,9 +10,17 @@ body{
   min-height: 100vh;
   overflow: scroll;
 }
-.user-card{
+
+.App {
+  width: 100vw;
+  height: 100vh;
+}
+
+.user-card {
   background-image: linear-gradient(to top, #073233, #142544);
 }
+
+
 .chatContainer {
   width: 80vw;
   height: 80vh;
@@ -59,7 +66,7 @@ body{
 
 .messageContainer {
   display: flex;
-  
+
 }
 
 .messageContainer h1 {
@@ -102,30 +109,36 @@ body{
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-#signInDiv div{
-  width:100%;
+#signInDiv div {
+  width: 100%;
 }
 
-#signInDiv g{
-  display: none;
-}
-#signInDiv svg{
+#signInDiv g {
   display: none;
 }
 
-#signInDiv span{
+#signInDiv svg {
+  display: none;
+}
+
+#signInDiv span {
   font-weight: bold;
 }
 
-.nsm7Bb-HzV7m-LgbsSe-Bz112c{
-  display:none;
+.nsm7Bb-HzV7m-LgbsSe-Bz112c {
+  display: none;
 }
 
-.bugs{
+.bugs {
   font-size: 50px;
   cursor: pointer;
-  
+
 }
+
+.users {
+  cursor: pointer;
+}
+
 .dropdown {
   position: relative;
   display: inline-block;
@@ -136,11 +149,379 @@ body{
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 12px 16px;
   z-index: 1;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.bodyDiv {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  overflow: hidden;
+  --units: 2vh;
+  --brick1: #00000000;
+  --brick2: #7a7777;
+  --lines: #ffffff;
+  --gp-ln: 50%/calc(var(--units) * 10) calc(var(--units) * 5);
+  --gp-cn: 50%/calc(var(--units) * 5) calc(var(--units) * 5);
+  background:
+    repeating-conic-gradient(from 90deg at 95% 55%, var(--lines) 0% 25%, #fff0 0% 100%) var(--gp-cn),
+    repeating-linear-gradient(180deg, var(--lines) 0 5%, #fff0 0 50%, var(--lines) 0 55%, var(--brick2) 0 100%) var(--gp-ln),
+    repeating-linear-gradient(90deg, var(--brick1) 0 47.5%, var(--lines) 0 50%, var(--brick1) 0 97.5%, var(--lines) 0 100%) var(--gp-ln);
+
+}
+
+
+
+.ball {
+  display: block;
+  margin: 0;
+  border-radius: 50%;
+  height: 300px;
+  width: 65%;
+  background: radial-gradient(circle at 100px 100px, #000000, #645858);
+  z-index: 1;
+}
+
+.ball2 {
+  display: block;
+  background: black;
+  margin-top: -260px;
+  border-radius: 50%;
+  height: 300px;
+  width: 80%;
+  background: radial-gradient(circle at 100px 100px, #ff0000, #000);
+  z-index: 10;
+}
+
+.ball3 {
+  display: block;
+  background: rgb(0, 0, 0);
+  margin: -80% -40% 0 0;
+  border-radius: 50%;
+  height: 12%;
+  width: 15%;
+  background: radial-gradient(circle at 100px 100px, #645858, #000000);
+  transform: rotate(-30deg);
+  z-index: 100;
+}
+
+.ball4 {
+  display: block;
+  background: rgb(0, 0, 0);
+  margin: -18% 40% 0 0;
+  border-radius: 50%;
+  height: 12%;
+  width: 15%;
+  background: radial-gradient(circle at 100px 100px, #645858, #000000);
+  transform: rotate(30deg);
+  z-index: 100;
+}
+
+.ball5 {
+  display: block;
+  background: rgb(0, 0, 0);
+  margin: 10% -38% 0 0;
+  border-radius: 50%;
+  height: 20%;
+  width: 22%;
+  background: radial-gradient(circle at 100px 100px, #645858, #000000);
+  transform: rotate(30deg);
+  z-index: 100;
+}
+
+.ball6 {
+  display: block;
+  background: rgb(0, 0, 0);
+  margin: -32% 38% 0 0;
+  border-radius: 50%;
+  height: 20%;
+  width: 22%;
+  background: radial-gradient(circle at 100px 100px, #645858, #000000);
+  transform: rotate(-30deg);
+  z-index: 100;
+}
+
+.ball .shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
+  -webkit-transform: rotateX(90deg) translateZ(-150px);
+  -moz-transform: rotateX(90deg) translateZ(-150px);
+  -ms-transform: rotateX(90deg) translateZ(-150px);
+  -o-transform: rotateX(90deg) translateZ(-150px);
+  transform: rotateX(90deg) translateZ(-150px);
+  z-index: -1;
+}
+
+
+.stage {
+
+  margin-top: 25%;
+  padding-top: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 300px;
+  height: 570px;
+  -webkit-perspective: 1200px;
+  -moz-perspective: 1200px;
+  -ms-perspective: 1200px;
+  -o-perspective: 1200px;
+  perspective: 1200px;
+  -webkit-perspective-origin: 50% 50%;
+  -moz-perspective-origin: 50% 50%;
+  -ms-perspective-origin: 50% 50%;
+  -o-perspective-origin: 50% 50%;
+  perspective-origin: 50% 50%;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-bg: linear-gradient(to top, #010329, #000005);
+}
+
+.b-wrapper {
+  position: absolute;
+  left: 45%;
+  bottom: 2vmin;
+}
+
+.b-wrapper--1 {
+  left: 49%;
+  bottom: 26%;
+  transform-origin: 10% left;
+  transform: rotate(180deg);
+  z-index: 100;
+}
+
+.b-wrapper--2 {
+  left: 86%;
+  bottom: 30%;
+  transform-origin: 10% left;
+  transform: rotate(-30deg);
+}
+
+.b-wrapper--3 {
+  left: 79%;
+  bottom: 30%;
+  transform-origin: 10% left;
+  transform: rotate(45deg);
+}
+
+.b-wrapper--4 {
+  left: 9%;
+  bottom: 30%;
+  transform-origin: 10% left;
+  transform: rotate(30deg);
+}
+
+.b-wrapper--5 {
+  left: 16%;
+  bottom: 30%;
+  transform-origin: 10% left;
+  transform: rotate(-45deg);
+}
+
+.b-wrapper--6 {
+  left: 7%;
+  bottom: 60%;
+  transform-origin: 10% left;
+  transform: rotate(30deg);
+}
+
+.b-wrapper--7 {
+  left: 14%;
+  bottom: 60%;
+  transform-origin: 10% left;
+  transform: rotate(-45deg);
+}
+
+.b-wrapper--8 {
+  left: 89%;
+  bottom: 60%;
+  transform-origin: 10% left;
+  transform: rotate(-30deg);
+}
+
+.b-wrapper--9 {
+  left: 82%;
+  bottom: 60%;
+  transform-origin: 10% left;
+  transform: rotate(+45deg);
+}
+
+.b-wrapper--10 {
+  left: 92%;
+  bottom: 45%;
+  transform-origin: 10% left;
+  transform: rotate(-30deg);
+}
+
+.b-wrapper--11 {
+  left: 85%;
+  bottom: 45%;
+  transform-origin: 10% left;
+  transform: rotate(+45deg);
+}
+
+.b-wrapper--12 {
+  left: 1%;
+  bottom: 45%;
+  transform-origin: 10% left;
+  transform: rotate(30deg);
+}
+
+.b-wrapper--13 {
+  left: 9%;
+  bottom: 45%;
+  transform-origin: 10% left;
+  transform: rotate(-45deg);
+}
+
+.b-wrapper--14 {
+  left: 20%;
+  bottom: 84%;
+  transform-origin: 10% left;
+  transform: rotate(30deg);
+  z-index: 8;
+}
+
+.b-wrapper--15 {
+  left: 29%;
+  bottom: 80%;
+  transform-origin: 10% left;
+  transform: rotate(-45deg);
+  z-index: 6;
+}
+
+.b-wrapper--16 {
+  left: 68%;
+  bottom: 85%;
+  transform-origin: 10% left;
+  transform: rotate(30deg);
+  z-index: 8;
+}
+
+.b-wrapper--17 {
+  left: 65%;
+  bottom: 80%;
+  transform-origin: 10% left;
+  transform: rotate(45deg);
+  z-index: 6;
+}
+
+.b-wrapper--1 .line {
+  height: 280px;
+  width: 2px;
+}
+
+
+.b-wrapper--2 .line {
+  height: 45px;
+}
+
+.b-wrapper--3 .line {
+  height: 45px;
+  position: relative;
+  background-image: linear-gradient(to top, #073233, #142544);
+}
+
+.b-wrapper--4 .line {
+  height: 45px;
+}
+
+.b-wrapper--5 .line {
+  height: 45px;
+  position: relative;
+  background-image: linear-gradient(to top, #073233, #142544);
+}
+
+.b-wrapper--6 .line {
+  height: 45px;
+}
+
+.b-wrapper--7 .line {
+  height: 45px;
+  position: relative;
+  background-image: linear-gradient(to top, #073233, #142544);
+}
+
+.b-wrapper--8 .line {
+  height: 45px;
+}
+
+.b-wrapper--9 .line {
+  height: 45px;
+  position: relative;
+  background-image: linear-gradient(to top, #073233, #142544);
+}
+
+.b-wrapper--10 .line {
+  height: 45px;
+}
+
+.b-wrapper--11 .line {
+  height: 45px;
+  position: relative;
+  background-image: linear-gradient(to top, #073233, #142544);
+}
+
+.b-wrapper--12 .line {
+  height: 45px;
+}
+
+.b-wrapper--13 .line {
+  height: 45px;
+  position: relative;
+  background-image: linear-gradient(to top, #073233, #142544);
+}
+
+.b-wrapper--14 .line {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+
+.b-wrapper--15 .line {
+  height: 45px;
+  position: relative;
+  background-image: linear-gradient(to top, #073233, #142544);
+}
+
+.b-wrapper--16 .line {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+
+.b-wrapper--17 .line {
+  height: 45px;
+  position: relative;
+  background-image: linear-gradient(to top, #073233, #142544);
+}
+
+.line {
+  width: 20px;
+  background-image: linear-gradient(to bottom, #142544, #0d5152);
+  border-radius: 4vmin;
 }
